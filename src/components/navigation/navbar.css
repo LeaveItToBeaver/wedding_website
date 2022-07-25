@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap');
+
+.site-title{
+    text-decoration: none;
+    color: #52bce3;
+    font-size: 75px;
+    font-family: 'Dancing Script', cursive;
+}
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.link{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: goldenrod;
+}
+
+.link::after{
+    content: '';
+    position: aboslute;
+    display: block;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: goldenrod;
+    transition: 0.4s ease;
+}
+
+.link:hover::after{
+    transform: scaleX(1);
+}
+
+.link::before{
+    content: '';
+    position: aboslute;
+    display: block;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: goldenrod;
+    transition: 0.2s ease;
+}
+
+.link:hover::before{
+    transform: scaleX(1);
+}
+
+.nav{
+    background-color: whitesmoke;
+}

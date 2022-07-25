@@ -1,19 +1,20 @@
 import React from 'react'
 import { Link, useResolvedPath, useMatch } from 'react-router-dom'
 import CountdownTimer from '../countdown/CountdownTimer';
+import "./navbar.css"
 
 export default function Navbar() {
   return (
     <nav className='nav'>
         <div className='center'>
-            <Link to="/" className='site-title'>Cristy and Jason</Link>
+            <Link to="/" className='site-title'>Cristy & Jason</Link>
             <CountdownTimer />
         </div>
         <ul>
-            <CustomLink to="/">Home</CustomLink>
-            <CustomLink to="/RSVP">RSVP</CustomLink>
-            <CustomLink to="/Gallery">Gallery</CustomLink>
-            <CustomLink to="/FAQ">FAQ</CustomLink>
+            <CustomLink to="/" className="link">Home</CustomLink>
+            <CustomLink to="/RSVP" className="link">RSVP</CustomLink>
+            <CustomLink to="/Gallery" className="link">Gallery</CustomLink>
+            <CustomLink to="/FAQ" className="link">FAQ</CustomLink>
         </ul>
     </nav>
   )

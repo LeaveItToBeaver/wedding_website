@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import "./CountdownTimer.css";
 
 export default function CountdownTimer() {
     const calculateTime = () => {
@@ -40,5 +41,5 @@ export default function CountdownTimer() {
                 <h1>Time for us to get married!</h1>
             )}
         </div>
-    )
-}
+    );
+};
