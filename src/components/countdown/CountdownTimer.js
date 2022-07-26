@@ -25,8 +25,26 @@ export default function CountdownTimer() {
         }, 1000);
     })
 
+    const [windowDimension, setWindowDimension] = useState(null);
+
+    useEffect(() => {
+        setWindowDimension(window.innerWidth);
+    }, []);
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowDimension(window.innerWidth);
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const isMobile = windowDimension <= 680;
+
+
     return (
-        <div className="timer">
+        <div className={isMobile? "mobile-timer" : "timer"}>
             {timeLeft.days
                 || timeLeft.hours
                 || timeLeft.minutes

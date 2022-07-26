@@ -5,6 +5,7 @@ import Landing from './pages/landing/Landing';
 import RSVP from './pages/rsvp/RSVP';
 import Gallery from './pages/gallery/Gallery';
 import FAQ from './pages/faq/FAQ';
+import Registry from './pages/Registry/Registry';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Landing />}/>
           <Route path='/rsvp' element={<RSVP />}/>
+          <Route path='/registry' element={<Registry />}/>
           <Route path='/gallery' element={<Gallery />}/>
           <Route path='/faq' element={<FAQ />}/>
         </Routes>

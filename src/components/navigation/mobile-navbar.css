@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap');
 
-.site-title{
+.mobile-site-title{
     text-decoration: none;
     color: #B5E1E0;
-    font-size: 75px;
+    font-size: 60px;
     font-family: 'Dancing Script', cursive;
 }
 
@@ -15,32 +15,15 @@ ul{
     padding-right: 10px;
 }
 
-.link{
+.mobile-link{
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 25px;
+    font-size: auto;
     color: #FBDEC2;
 }
 
-.link::after{
-    content: '';
-    position: aboslute;
-    display: block;
-    width: 100%;
-    transform: scaleX(0);
-    height: 4px;
-    bottom: 0;
-    left: 0;
-    background-color: #E3A55E;
-    transition: 0.4s ease;
-}
-
-.link:hover::after{
-    transform: scaleX(1);
-}
-
-.link::before{
+.mobile-link::after{
     content: '';
     position: aboslute;
     display: block;
@@ -53,17 +36,23 @@ ul{
     transition: 0.2s ease;
 }
 
-.link:hover::before{
+.mobile-link:hover::after{
     transform: scaleX(1);
 }
 
-.nav{
-    background-color: #51AFF7;
+.mobile-link::before{
+    content: '';
+    position: aboslute;
+    display: block;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #E3A55E;
+    transition: 0.2s ease;
 }
 
-.nav .active .link {
-    display: block;
-    background-color: #E3A55E;
-    color: white;
-    transition: 0.4s;
+.mobile-link:hover::before{
+    transform: scaleX(1);
 }
