@@ -2,7 +2,7 @@
 
 .site-title{
     text-decoration: none;
-    color: #52bce3;
+    color: #B5E1E0;
     font-size: 75px;
     font-family: 'Dancing Script', cursive;
 }
@@ -19,7 +19,7 @@ ul{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 25px;
-    color: goldenrod;
+    color: #FBDEC2;
 }
 
 .link::after{
@@ -31,7 +31,7 @@ ul{
     height: 4px;
     bottom: 0;
     left: 0;
-    background-color: goldenrod;
+    background-color: #E3A55E;
     transition: 0.4s ease;
 }
 
@@ -48,7 +48,7 @@ ul{
     height: 4px;
     bottom: 0;
     left: 0;
-    background-color: goldenrod;
+    background-color: #E3A55E;
     transition: 0.2s ease;
 }
 
@@ -57,14 +57,15 @@ ul{
 }
 
 .nav{
-    background-color: whitesmoke;
+    background-color: #51AFF7;
 }
 
 .nav .active .link {
+
     padding: auto;
     display: block;
-    background-color: goldenrod;
-    color: whitesmoke;
+    background-color: #E3A55E;
+    color: white;
     transition: 0.4s;
 }
 

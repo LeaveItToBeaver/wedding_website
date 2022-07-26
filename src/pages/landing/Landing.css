@@ -1,3 +1,7 @@
-.container h1{
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap');
+
+.container h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     color: black;
 }
