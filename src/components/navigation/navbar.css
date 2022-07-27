@@ -61,6 +61,17 @@ ul{
     background-color: #51AFF7;
 }
 
+.flower-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.363)), url(../../assets/Hero_Img.png);
+    height: 50%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
 .nav .active .link {
     display: block;
     background-color: #E3A55E;

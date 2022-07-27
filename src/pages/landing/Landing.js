@@ -1,5 +1,6 @@
 import React from 'react';
 import RSVP_Btn from '../../components/rsvp_button/RSVP_Button';
+import AboutUs from './AboutUs';
 import "./Landing.css";
 
 
@@ -13,6 +14,9 @@ export default function Landing() {
           If you have any troubles or just want to talk, <br/>
            give us a call at 336-909-8493.
         </h3>
+        <div className='about-us'>
+          <AboutUs />
+        </div>
     </div>
   );
 };
