@@ -62,14 +62,15 @@ ul{
 }
 
 .flower-image{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgba(0, 0, 0, 0.363)), url(../../assets/Hero_Img.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.236), rgba(0, 0, 0, 0.512)), url(../../assets/Hero_Img.png);
     height: 50%;
 
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat-y;
+    background-size: contain;
     position: relative;
+    background-attachment: fixed;
 }
 
 .nav .active .link {

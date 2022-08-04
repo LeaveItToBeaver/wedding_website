@@ -40,6 +40,18 @@ ul{
     transform: scaleX(1);
 }
 
+
+.flower-image-mobile {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.236), rgba(0, 0, 0, 0.512)), url(../../assets/Hero_Img.png);
+    height: auto;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    position: relative;
+}
+
 .mobile-link::before{
     content: '';
     position: aboslute;
