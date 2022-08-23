@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap');
+
+.about-us-container{
+    width: 75%;
+    display: flex;
+    background-color: whitesmoke;
+}
+.about-us-children{
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100%;
+    width: 50%;
+}
+.about-us-image{
+    background-image: url(../../assets/engagement_photos/IMG_4334.jpg);
+    background-size: contain;
+    min-height: 100%;
+    min-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.about-us-children > .story-text > h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: xx-large;
+}

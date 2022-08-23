@@ -12,8 +12,7 @@ function Registry() {
     <div className='container'>
       <h1>Registry</h1>
       <p className='para-text'>Celebrating our special day with loved ones is all we could as for. <br />
-        However, if you would like to honor us with a gift, we are registered here. <br />
-        Thank you.
+        However, if you would like to honor us with a gift, we are registered at Target. <br />
       </p>
       <div className='center'>
         <img src={targetLogo} 
@@ -23,7 +22,12 @@ function Registry() {
         <button className='registry-button1' onClick={handleClick}>
         Click Here To Go To Target
         </button>
+
       </div>
+      <p>
+          Or, if you would like to help pay for our honeymoon, you can do so below.<br/> 
+          Thank you.
+        </p> 
     </div>
   )
 }

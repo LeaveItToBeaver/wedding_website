@@ -14,7 +14,14 @@
     padding-right: 10px;
 }
 
+.about-us{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
 .mobile-about-us{
-    padding-left: 10px;
-    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
