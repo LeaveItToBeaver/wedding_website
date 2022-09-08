@@ -1,15 +1,13 @@
 import React from 'react'
-import '../landing/AboutUs.css'
+import '../landing/AboutUs.css';
 
 function AboutUs() {
   return (
     <div className='about-us-container'>
-        <div className='about-us-children'>
             <div className='about-us-image'>
             </div>
-        </div>
 
-        <div className='about-us-children'>
+        <span className='spanClass'>
             <div className='story-text'>
                 <h1>About Us!</h1>
                 <p>
@@ -24,7 +22,7 @@ function AboutUs() {
                     so Jason proposed in May of 2022 and we’ve been blissfully planning our story ever since.
                 </p>
             </div>
-        </div>
+        </span>
     </div>
   )
 }
