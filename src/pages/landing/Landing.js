@@ -3,7 +3,6 @@ import RSVP_Btn from '../../components/rsvp_button/RSVP_Button';
 import AboutUs from './AboutUs';
 import "./Landing.css";
 
-
 export default function Landing() {
   const [windowDimension, setWindowDimension] = useState(null);
 
