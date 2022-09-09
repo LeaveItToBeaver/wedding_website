@@ -4,22 +4,24 @@
     width: 80%;
     display: flex;
     background-color: whitesmoke;
+    align-items: center;
 }
 .about-us-children{
     padding-left: 5px;
-    padding-right: 5px;
+    padding-right: 25px;
     width: 50%;
-}
-.about-us-image{
-    background-image: url(../../assets/engagement_photos/IMG_4334.jpg);
-    background-size: cover;
-    min-height: 100%;
-    min-width: 100%;
-    background-repeat: no-repeat;
     background-position: center;
-    display: block;
 }
-. > .story-text > h1{
+
+.about-us-heading{
     font-family: 'Dancing Script', cursive;
     font-size: xx-large;
+}
+
+.about-us-para{
+    font-size: 30px;
+}
+
+.mobile-about-us-container{
+
 }

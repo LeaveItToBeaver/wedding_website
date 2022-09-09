@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Registry/Registry.css'
-import targetLogo from "../../assets/Target-Logo.png"
+import targetLogo from "../../assets/logos/Target-Logo.png"
 
 function Registry() {
 
