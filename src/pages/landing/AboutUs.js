@@ -25,9 +25,9 @@ function AboutUs() {
       <img src={engagement_photo}
         width="auto"
         height="auto"
-        className='about-us-children'
+        className={isMobile ? 'about-us-mobile-children' : 'about-us-children'}
       />
-      <div className='about-us-children'>
+      <div className={isMobile ? 'about-us-mobile-children' : 'about-us-children'}>
         <h1 className='about-us-heading'>About Us!</h1>
         <p className='about-us-para'>
           We met while working together at the Davie County Public Library.
