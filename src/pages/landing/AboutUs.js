@@ -18,7 +18,7 @@ function AboutUs() {
       return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isMobile = windowDimension <= 680;
+  const isMobile = windowDimension <= 960;
 
   return (
     <div className={isMobile ? 'mobile-about-us-container' : 'about-us-container'}>
@@ -36,7 +36,7 @@ function AboutUs() {
           Dating became an obvious next step as our friendship began to grow into something more.
           After making it official on April 1st of 2021,
           we quickly realized we’d found something special and far
-          more serious than either of us were expecting.
+          more serious than either of us were expecting. <br/><br/>
           It only took us one year to decide on forever,
           so Jason proposed in May of 2022 and we’ve been blissfully planning our story ever since.
         </p>
