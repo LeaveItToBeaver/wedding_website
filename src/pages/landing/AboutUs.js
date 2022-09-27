@@ -20,8 +20,11 @@ function AboutUs() {
 
   const isMobile = windowDimension <= 960;
 
+  var welcomeBool = isMobile? "Welcome!" : null
+
   return (
     <div className={isMobile ? 'mobile-about-us-container' : 'about-us-container'}>
+      <h1 className='welcomeHeader'>{welcomeBool}</h1>
       <img src={engagement_photo}
         width="auto"
         height="auto"

@@ -38,3 +38,9 @@
     align-items: center;
     background-color: whitesmoke;
 }
+
+.welcomeHeader{
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    color: #E3A55E;
+}

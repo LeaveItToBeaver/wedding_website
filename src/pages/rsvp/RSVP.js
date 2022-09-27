@@ -1,8 +1,12 @@
 import React from 'react'
-import RSVP_Btn from '../../components/rsvp_button/RSVP_Button'
+import "../rsvp/RSVP.css"
 
 export default function RSVP() {
   return (
-    <RSVP_Btn />
+    <div className='rsvp-container'>
+      <div className='contactus-card'>
+        <h4>RSVP Here!</h4>
+      </div>
+    </div>
   )
 }
