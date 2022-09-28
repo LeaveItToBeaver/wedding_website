@@ -22,14 +22,16 @@
 
 .about-us-heading{
     font-family: 'Dancing Script', cursive;
-    font-size: 60px;
+    font-size: 45px;
     color: #E3A55E;
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
 
 .about-us-para{
     font-family: 'Poppins', sans-serif;
     color:  #E3A55E;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .mobile-about-us-container{
