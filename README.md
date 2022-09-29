@@ -1,15 +1,22 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React.JS application made for my upcoming wedding on April 1<sup>st</sup>, 2023. :)
+
+## What I Learned From This Project.
+
+I learned about better state management more than anything. Even with a simple website like this,
+the accumulated overhead for not properly unmounting components can be devistating.
+
+Better graphic design techniques.
+
+A more thorough understanding of hosting practices through NGINX. I am hosting this on Raspberry Pi 
+at my house.
+
+# Getting Started with Create React App
 
 ## Available Scripts
 
 In the project directory, you can run:
-
+### `npm install` to make sure you have the latest packages
+Then
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
