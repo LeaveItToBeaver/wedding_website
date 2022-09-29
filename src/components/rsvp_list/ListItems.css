@@ -2,3 +2,23 @@
     width: 25px;
     height: auto;
 }
+
+.trash-png:hover {
+    width: 25px;
+    transition: 0.5s;
+    height: auto;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.new-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name-text{
+    font-size: 25px;
+    margin: 10px;
+}

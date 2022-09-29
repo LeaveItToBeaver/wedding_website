@@ -4,8 +4,8 @@ import '../rsvp_list/ListItems.css'
 
 function NewItem(props) {
     return (
-        <div>
-            <li>{props.text}</li>
+        <div className='new-item'>
+            <li className='name-text'>{props.text}</li>
             <span onClick={() => {
                 props.onChecked(props.id);
             }}>
