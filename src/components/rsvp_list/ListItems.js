@@ -1,5 +1,6 @@
 import React from 'react'
 import FlipMove from 'react-flip-move'
+import '../rsvp_list/ListItems.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 function ListItems(props) {
