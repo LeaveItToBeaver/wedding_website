@@ -10,7 +10,8 @@ function NewItem(props) {
                 props.onChecked(props.id);
             }}>
                 <img src={trash}
-                    className='trash-png' />
+                    className='trash-png' 
+                    title='Delete Name'/>
             </span>
         </div>
     )

@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
-import NewItem from './NewItem';
+import PlusIcon from '../../assets/interactionPNGs/plus-icon.png'
+import NewItem from './NewItem'
+import '../rsvp_list/ListItems.css'
+
 
 function CreateItem() {
     const [task, setTask] = useState("");
@@ -35,16 +38,21 @@ function CreateItem() {
             <div className='item-form'>
                 <input
                     name='nameInput'
+                    placeholder='First and last name'
                     type="text"
                     onChange={handleChange}
                     value={task}
+                    className='name-input'
                 />
-                <button onClick={addName}>
-                    <span>Add</span>
+                <button onClick={addName} 
+                    className='add-name-btn'>
+                    <span><img 
+                        src={PlusIcon} 
+                        className='add-name-icon'/></span>
                 </button>
             </div>
             <div>
-                <ul>
+                <ul className='list-container'>
                     {items.map((item, index) => (
                         <NewItem
                             key={index}

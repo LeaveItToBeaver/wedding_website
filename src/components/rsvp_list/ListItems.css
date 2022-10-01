@@ -1,15 +1,16 @@
 .trash-png{
     width: 25px;
     height: auto;
+    padding: 5px;
 }
 
 .trash-png:hover {
     width: 25px;
-    transition: 0.5s;
+    transition: 0.3s;
     height: auto;
     padding: 5px;
-    border-radius: 50%;
-    background-color: red;
+    border-radius: 25%;
+    background-color: whitesmoke;
 }
 
 .new-item{
@@ -20,5 +21,36 @@
 
 .name-text{
     font-size: 25px;
+    margin: 10px;
+}
+
+.list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-name-icon{
+    width: auto;
+    height: 25px;
+}
+
+.item-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-input{
+    height: 25px;
+}
+
+.add-name-btn{
     margin: 10px;
 }
