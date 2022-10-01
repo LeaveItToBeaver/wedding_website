@@ -6,6 +6,7 @@ import '../rsvp_list/ListItems.css'
 
 
 function CreateItem() {
+    
     const [task, setTask] = useState("");
     const [items, setItems] = useState([]);
 

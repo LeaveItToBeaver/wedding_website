@@ -1,8 +1,22 @@
-
-
 .contactus-card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
     background-color: whitesmoke;
 }
+
+.item-heading-text{
+    font-size: 25px;
+}
+
+.rsvp-heading-one{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rsvp-heading-two{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+}
+

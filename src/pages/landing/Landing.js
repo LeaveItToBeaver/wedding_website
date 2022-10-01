@@ -19,7 +19,7 @@ export default function Landing() {
       return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isMobile = windowDimension <= 680;
+  const isMobile = windowDimension <= 960;
 
   return (
     <div className={isMobile ? 'mobile-container' : 'container'}>

@@ -22,13 +22,14 @@
 }
 
 .footer-logos{
-    height: 45px;
+    height: 30px;
     width: auto;
-    padding: 10px;
+    padding: 5px;
 }
 
 .mobile-support-text{
     color: white;
     align-items: center;
     font-size: 15px;
+    padding: 20px;
 }
