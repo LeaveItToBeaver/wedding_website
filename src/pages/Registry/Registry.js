@@ -16,7 +16,7 @@ function Registry() {
   return (
     <div className='container-reg'>
       <h1 className='header-reg'>Registry</h1>
-      <p className='para-text'>Celebrating our special day with loved ones is all we could as for. <br />
+      <p className='para-text'>Celebrating our special day with loved ones is all we could ask for. <br />
         However, if you would like to honor us with a gift, we are registered at Target as well as <br />
         Bed Bath And Beyond. <br />
       </p>

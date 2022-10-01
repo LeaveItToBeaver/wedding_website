@@ -23,14 +23,14 @@
 .about-us-heading{
     font-family: 'Dancing Script', cursive;
     font-size: 45px;
-    color: #E3A55E;
+    color: black;
     margin-top: 60px;
     margin-bottom: 10px;
 }
 
 .about-us-para{
     font-family: 'Poppins', sans-serif;
-    color:  #E3A55E;
+    color:  black;
     font-size: 20px;
 }
 
@@ -44,5 +44,5 @@
 .welcomeHeader{
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
-    color: #E3A55E;
+    color: black;
 }

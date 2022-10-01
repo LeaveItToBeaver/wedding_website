@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import '../rsvp/RSVP.css'
+import '../rsvp/RSVPMobile.css'
 import PlusIcon from '../../assets/interactionPNGs/plus-icon.png'
-import NewItem from '../../components/rsvp_list/NewItem'
+import NewItem from '../../components/rsvp_list/Item'
 
 
 function RSVP() {
@@ -68,17 +69,18 @@ function RSVP() {
             type="text"
             onChange={handleChange}
             value={task}
-            className='name-input'
+            className={isMobile ? 'mobile-name-input' : 'name-input'}
           />
           <button onClick={addName}
-            className='add-name-btn'>
+            className={isMobile ? 'mobile-name-button' : 'add-name-btn'}>
             <span><img
               src={PlusIcon}
-              className='add-name-icon' /></span>
+              className={isMobile ?  'mobile-name-icon' : 'add-name-icon'}/>
+              </span>
           </button>
         </div>
         <div>
-          <ul className='list-container'>
+          <ul className={isMobile ? 'mobile-list-container' : 'list-container'}>
             {items.map((item, index) => (
               <NewItem
                 key={index}

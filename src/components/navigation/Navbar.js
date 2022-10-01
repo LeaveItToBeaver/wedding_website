@@ -26,12 +26,14 @@ export default function Navbar() {
         <nav className='nav'>
             <div className={isMobile ? 'flower-image-mobile' : 'flower-image'}>
                 <div className='center'>
-                    <Link to="/" className={
-                        isMobile ? 'mobile-site-title' : 'site-title'
-                    }>
-                        Cristy & Jason
-                    </Link>
-                    <CountdownTimer />
+                    <div className='bg-blur'>
+                        <Link to="/" className={
+                            isMobile ? 'mobile-site-title' : 'site-title'
+                        }>
+                            Cristy & Jason
+                        </Link>
+                        <CountdownTimer />
+                    </div>
                 </div>
                 <ul>
                     <CustomLink to="/" className={isMobile ? 'mobile-link' : 'link'}>

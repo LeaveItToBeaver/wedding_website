@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Poppins&display=swap');
 
 .timer h1{
-    color: #FBDEC2;
+    color: #fefefe;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
 }
 
 .mobile-timer{
-    color: #FBDEC2;
+    color: #fefefe;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     padding-left: 10px;

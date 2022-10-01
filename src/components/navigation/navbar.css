@@ -59,6 +59,7 @@ ul{
 
 .nav{
     background-color: #5f849c;
+    
 }
 
 .flower-image{
@@ -73,9 +74,16 @@ ul{
     background-attachment: fixed;
 }
 
+.bg-blur{
+    padding-left: 10px;
+    padding-right: 10px;
+    backdrop-filter: blur(5px);
+    background-color: #394c5a5b;
+}
+
 .nav .active .link {
     display: block;
-    background-color: #E3A55E;
-    color: white;
+    background-color: #fefefe;
+    color: black;
     transition: 0.4s;
 }

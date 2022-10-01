@@ -23,35 +23,3 @@
     font-size: 25px;
     margin: 10px;
 }
-
-.list-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 10%;
-}
-
-.add-name-icon{
-    width: auto;
-    height: 25px;
-}
-
-.item-form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.item-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.name-input{
-    height: 30px;
-}
-
-.add-name-btn{
-    margin: 10px;
-}
