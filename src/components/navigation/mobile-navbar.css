@@ -2,7 +2,7 @@
 
 .mobile-site-title{
     text-decoration: none;
-    color: #B5E1E0;
+    color: #fefefe;
     font-size: 60px;
     font-family: 'Dancing Script', cursive;
 }
@@ -20,7 +20,7 @@ ul{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: auto;
-    color: #FBDEC2;
+    color: #fefefe;
 }
 
 .mobile-link::after{
@@ -32,7 +32,7 @@ ul{
     height: 4px;
     bottom: 0;
     left: 0;
-    background-color: #E3A55E;
+    background-color: #9e9383;
     transition: 0.2s ease;
 }
 
@@ -61,7 +61,7 @@ ul{
     height: 4px;
     bottom: 0;
     left: 0;
-    background-color: #E3A55E;
+    background-color: #9e9383;
     transition: 0.2s ease;
 }
 

@@ -6,6 +6,7 @@ import RSVP from './pages/rsvp/RSVP';
 import Gallery from './pages/gallery/Gallery';
 import FAQ from './pages/faq/FAQ';
 import Registry from './pages/Registry/Registry';
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/faq' element={<FAQ />}/>
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
