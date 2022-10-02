@@ -40,7 +40,7 @@ export default function CountdownTimer() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const isMobile = windowDimension <= 680;
+    const isMobile = windowDimension <= 960;
 
 
     return (

@@ -11,8 +11,6 @@ ul{
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .link{

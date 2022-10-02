@@ -20,7 +20,7 @@ export default function Navbar() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const isMobile = windowDimension <= 680;
+    const isMobile = windowDimension <= 960;
 
     return (
         <nav className='nav'>
@@ -30,9 +30,9 @@ export default function Navbar() {
                         <Link to="/" className={
                             isMobile ? 'mobile-site-title' : 'site-title'
                         }>
-                            Cristy & Jason
+                            Jason & Christy
                         </Link>
-                        <CountdownTimer />
+                        {isMobile ? null : <CountdownTimer />}
                     </div>
                 </div>
                 <ul>
