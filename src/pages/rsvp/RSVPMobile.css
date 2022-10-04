@@ -5,15 +5,20 @@
     height: 10%;
 }
 
+.mobile-name-button{
+    margin: 5px;
+}
+
 .mobile-name-icon{
     width: auto;
-    height: 25px;
+    height: 50px;
 }
 
 .item-form{
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 85%;
 }
 
 .item-container{
@@ -23,7 +28,13 @@
 }
 
 .mobile-name-input{
-    height: 30px;
+    min-height: 50px;
+    width: 100%;
+    font-size: large;
+}
+
+.mobile-name-input::placeholder{
+    font-size: large;
 }
 
 .add-name-btn{

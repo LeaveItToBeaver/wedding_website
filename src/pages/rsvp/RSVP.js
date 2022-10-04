@@ -5,7 +5,6 @@ import '../rsvp/RSVPMobile.css'
 import PlusIcon from '../../assets/interactionPNGs/plus-icon.png'
 import NewItem from '../../components/rsvp_list/Item'
 
-
 function RSVP() {
   const [task, setTask] = useState("");
   const [items, setItems] = useState([]);
@@ -24,6 +23,7 @@ function RSVP() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const isDisabled = true;
   const isMobile = windowDimension <= 960;
 
   function handleChange(event) {
@@ -70,26 +70,29 @@ function RSVP() {
             onChange={handleChange}
             value={task}
             className={isMobile ? 'mobile-name-input' : 'name-input'}
-          />
+          ></input>
           <button onClick={addName}
             className={isMobile ? 'mobile-name-button' : 'add-name-btn'}>
             <span><img
               src={PlusIcon}
-              className={isMobile ?  'mobile-name-icon' : 'add-name-icon'}/>
-              </span>
+              className={isMobile ? 'mobile-name-icon' : 'add-name-icon'}/>
+            </span>
           </button>
         </div>
         <div>
-          <ul className={isMobile ? 'mobile-list-container' : 'list-container'}>
+          <ul className={isMobile ? 'mobile-list-container' 
+            : 'list-container'}>
             {items.map((item, index) => (
               <NewItem
                 key={index}
                 id={index}
                 text={item}
-                onChecked={deleteName} />
-            )
-            )}
+                onChecked={deleteName} />))}
           </ul>
+          <button className="submit-name-button" 
+            disabled={isDisabled ? "disabled" : ""}>
+              Submit
+          </button>
         </div>
       </div>
     </div>
