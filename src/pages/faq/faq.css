@@ -1,0 +1,14 @@
+.sign-in-btn{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
+.sign-in-btn:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 25px;
+    padding: 5px;
+}
