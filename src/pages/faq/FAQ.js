@@ -14,6 +14,7 @@ export default function FAQ() {
     <div className='faq-container'>
       <div>
       </div>
+      
       <div className='login-holder'>
         <span onClick={onClick} className="sign-in-btn">Show Login</span>
         {showLogin ? <Login /> : null }
