@@ -2,7 +2,7 @@
 
 .site-title{
     text-decoration: none;
-    color: #fefefe;
+    color: #000000;
     font-size: 75px;
     font-family: 'Dancing Script', cursive;
 }
@@ -18,7 +18,7 @@ ul{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 25px;
-    color: #fefefe;
+    color: #000000;
 }
 
 .link::after{
@@ -56,20 +56,7 @@ ul{
 }
 
 .nav{
-    background-color: #5f849c;
-    
-}
-
-.flower-image{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.236), rgba(0, 0, 0, 0.512)), url(../../assets/Hero_Img.png);
-    height: 50%;
-
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: repeat-y;
-    background-size: contain;
-    position: relative;
-    background-attachment: fixed;
+    background-color: white;
 }
 
 .bg-blur{
@@ -81,7 +68,7 @@ ul{
 
 .nav .active .link {
     display: block;
-    background-color: #fefefe;
+    background-color: #ffffff;
     color: black;
     transition: 0.4s;
 }

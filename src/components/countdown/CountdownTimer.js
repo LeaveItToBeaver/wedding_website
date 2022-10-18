@@ -54,7 +54,7 @@ export default function CountdownTimer() {
                     <span>{timeLeft.hours} hours, </span>
                     <span>{timeLeft.minutes} minutes, </span>
                     <span>{timeLeft.seconds} seconds to go! <br /></span>
-                    <span> April 1<sup>st</sup>, 2024</span>
+                    <span> April 1<sup>st</sup>, 2023</span>
                 </h1>
             ) : (
                 <h1>Time for us to get married!</h1>

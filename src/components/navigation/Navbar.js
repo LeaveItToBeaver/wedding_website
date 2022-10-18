@@ -24,7 +24,7 @@ export default function Navbar() {
 
     return (
         <nav className='nav'>
-            <div className={isMobile ? 'flower-image-mobile' : 'flower-image'}>
+            <div className={isMobile}>
                 <div className='center'>
                     <div className='bg-blur'>
                         <Link to="/" className={

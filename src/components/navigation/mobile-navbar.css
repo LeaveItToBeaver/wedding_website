@@ -2,7 +2,7 @@
 
 .mobile-site-title{
     text-decoration: none;
-    color: #fefefe;
+    color: black;
     font-size: 50px;
     font-family: 'Dancing Script', cursive;
 }
@@ -20,7 +20,7 @@ ul{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: auto;
-    color: #fefefe;
+    color: black;
 }
 
 .mobile-link::after{
@@ -38,18 +38,6 @@ ul{
 
 .mobile-link:hover::after{
     transform: scaleX(1);
-}
-
-
-.flower-image-mobile {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.236), rgba(0, 0, 0, 0.512)), url(../../assets/Hero_Img.png);
-    height: auto;
-
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: repeat-y;
-    background-size: cover;
-    position: relative;
 }
 
 .mobile-link::before{
