@@ -32,7 +32,6 @@ export default function Navbar() {
                         }>
                             Jason & Christy
                         </Link>
-                        {isMobile ? null : <CountdownTimer />}
                     </div>
                 </div>
                 <ul>

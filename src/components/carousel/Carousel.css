@@ -1,0 +1,36 @@
+.carousel-container{
+    overflow: hidden;
+}
+
+.inner-container{
+    white-space: nowrap;
+    transition: transform 0.3s;
+}
+
+.carousel-item{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    background-color: whitesmoke;
+    color: black;
+}
+
+.caousel-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-buttons > button{
+    margin: 5px;
+}
+
+.caousel-buttons > button.active-button {
+    background-color: red;
+    color: black;
+}
