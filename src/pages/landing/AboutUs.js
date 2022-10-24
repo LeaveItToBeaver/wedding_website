@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import '../landing/AboutUs.css';
-import engagement_photo from "../../assets/engagement_photos/IMG_4334.jpg"
+import engagement_photo from "../../assets/engagement_photos/IMG4.jpg"
 
 function AboutUs() {
   const [windowDimension, setWindowDimension] = useState(null);

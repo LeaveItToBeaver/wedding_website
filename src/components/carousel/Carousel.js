@@ -3,35 +3,35 @@ import { useSwipeable } from 'react-swipeable'
 import "../carousel/Carousel.css"
 
 export const CarouselItem = ({ children, width }) => {
-  return (
-    <div className='carousel-item' style={{ width: width }}>
-        {children}        
-    </div>
-  )
+    return (
+        <div className='carousel-item' style={{ width: width }}>
+            {children}
+        </div>
+    )
 }
 
-const Carousel = ({ children }) =>{
+const Carousel = ({ children }) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const [paused, setPaused] = useState(false)
 
     const updateIndex = (newIndex) => {
-        if(newIndex < 0){
+        if (newIndex < 0) {
             newIndex = React.Children.count(children) - 1
-        } else if (newIndex >= React.Children.count(children)){
+        } else if (newIndex >= React.Children.count(children)) {
             newIndex = 0
         }
         setActiveIndex(newIndex)
     }
 
-    useEffect (() => {
+    useEffect(() => {
         const interval = setInterval(() => {
-            if(!paused){
+            if (!paused) {
                 updateIndex(activeIndex + 1)
             }
         }, 7500)
 
         return () => {
-            if (interval){
+            if (interval) {
                 clearInterval(interval)
             }
         }
@@ -43,12 +43,12 @@ const Carousel = ({ children }) =>{
     })
 
     return (
-        <div 
+        <div
             {...handlers}
             className='carousel-container'
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}>
-            <div className='inner-container' 
+            <div className='inner-container'
                 style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
                 {
                     React.Children.map(children, (child, index) => {
@@ -56,13 +56,17 @@ const Carousel = ({ children }) =>{
                     })
                 }
             </div>
-            <div className='carousel-buttons'>
-                <button onClick={() => {
-                    updateIndex(activeIndex - 1)
-                }}> prev </button>
-                <button onClick={() => {
-                    updateIndex(activeIndex + 1)
-                }}> next </button>
+            <div className='carousel-buttons-container'>
+                <button
+                    className='carousel-buttons'
+                    onClick={() => {
+                        updateIndex(activeIndex - 1)
+                    }}> prev </button>
+                <button
+                    className='carousel-buttons'
+                    onClick={() => {
+                        updateIndex(activeIndex + 1)
+                    }}> next </button>
             </div>
         </div>
     )
