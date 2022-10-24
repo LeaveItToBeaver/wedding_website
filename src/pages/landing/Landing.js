@@ -24,7 +24,6 @@ export default function Landing() {
 
   return (
     <div className={isMobile ? 'mobile-container' : 'container'}>
-        {isMobile ? <CountdownTimer/> : null}
         <div className={isMobile ? 'mobile-about-us' : 'about-us'}>
           <AboutUs />
         </div>

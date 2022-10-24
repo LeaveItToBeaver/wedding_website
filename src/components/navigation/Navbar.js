@@ -26,12 +26,27 @@ export default function Navbar() {
         <nav className='nav'>
             <div className={isMobile}>
                 <div className='center'>
-                    <div className='bg-blur'>
-                        <Link to="/" className={
-                            isMobile ? 'mobile-site-title' : 'site-title'
-                        }>
-                            Jason & Christy
-                        </Link>
+                    <Link to="/" className={
+                        isMobile ? 'mobile-site-title' : 'site-title'
+                    }>
+                        Jason & Christy
+                    </Link>
+                    <div className='navbar-title-runner'>
+                        <div className='navbar-title-left'>
+                            <h1>
+                                April 1<sup>st</sup>
+                                <br/>
+                                2022
+                            </h1>
+                        </div>
+                        <hr className='vertical-line'/>
+                        <div className='navbar-title-right'>
+                            <h1>
+                                Mt. Airy 
+                                <br/>
+                                NC
+                            </h1>
+                        </div>
                     </div>
                 </div>
                 <ul>

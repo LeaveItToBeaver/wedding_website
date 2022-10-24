@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.db564caa.css",
-    "main.js": "/static/js/main.2a4aa0fe.js",
-    "static/media/IMG_4334.jpg": "/static/media/IMG_4334.701f0513023642ccc041.jpg",
-    "static/media/Hero_Img.png": "/static/media/Hero_Img.7f3896571dd6a1826a1b.png",
+    "main.css": "/static/css/main.72407280.css",
+    "main.js": "/static/js/main.fbb50324.js",
+    "static/media/IMG2.jpg": "/static/media/IMG2.e66fff5a8ffb58636853.jpg",
+    "static/media/IMG5.jpg": "/static/media/IMG5.3e487d208a157c8f6c1f.jpg",
+    "static/media/IMG4.jpg": "/static/media/IMG4.9f3f5387c279b19ae403.jpg",
+    "static/media/IMG1.jpg": "/static/media/IMG1.3b3efdb0c1cd8af42453.jpg",
+    "static/media/IMG3.jpg": "/static/media/IMG3.5a8fb0e0ffd25c210b8b.jpg",
+    "static/media/IMG6.jpg": "/static/media/IMG6.60ed98c0aa55ea6bce39.jpg",
     "static/media/react_logo.png": "/static/media/react_logo.8a6fc0a24a800d1e0f4a.png",
     "static/media/Target-Logo.png": "/static/media/Target-Logo.9f3572bbde48b3e9cb08.png",
     "static/media/jaclogo.png": "/static/media/jaclogo.a92da4b9817030260442.png",
@@ -11,11 +15,11 @@
     "static/media/trash.png": "/static/media/trash.fab7105fbb1aa89ac001.png",
     "static/media/firebase_logopng.png": "/static/media/firebase_logopng.6ea3b0b39b97b0e49515.png",
     "index.html": "/index.html",
-    "main.db564caa.css.map": "/static/css/main.db564caa.css.map",
-    "main.2a4aa0fe.js.map": "/static/js/main.2a4aa0fe.js.map"
+    "main.72407280.css.map": "/static/css/main.72407280.css.map",
+    "main.fbb50324.js.map": "/static/js/main.fbb50324.js.map"
   },
   "entrypoints": [
-    "static/css/main.db564caa.css",
-    "static/js/main.2a4aa0fe.js"
+    "static/css/main.72407280.css",
+    "static/js/main.fbb50324.js"
   ]
 }
