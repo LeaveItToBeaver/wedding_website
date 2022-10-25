@@ -39,7 +39,7 @@ export default function Navbar() {
                                 2022
                             </h1>
                         </div>
-                        <hr className='vertical-line'/>
+                        <div className='middle-bar'></div>
                         <div className='navbar-title-right'>
                             <h1>
                                 Mt. Airy 
