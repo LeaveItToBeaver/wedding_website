@@ -11,18 +11,18 @@ function NewItem(props) {
                 }}>
                 <img src={trash}
                     className='trash-png'
-                    title='Delete Name' />
+                    title='Delete Name'/>
             </span>
             <input type="radio"
-                name='attending'
-                value="Yes"
+                name={props.name}
+                value={1}
                 id='attendingChoice1'
                 className='attending-input' />
             <label htmlFor="attendingChoice1"
                 className='label-radio'>Yes</label>
             <input type="radio"
-                name='attending'
-                value="No"
+                name={props.name}
+                value={0}
                 id='attendingChoice2'
                 className='attending-input' />
             <label htmlFor="attendingChoice2"

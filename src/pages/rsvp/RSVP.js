@@ -1,14 +1,45 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
+import {db} from '../../Firebase'
+import { collection, addDoc, getDocs } from "firebase/firestore"
 import '../rsvp/RSVP.css'
 import '../rsvp/RSVPMobile.css'
 import PlusIcon from '../../assets/interactionPNGs/plus-icon.png'
 import NewItem from '../../components/rsvp_list/Item'
 
 function RSVP() {
-  const [task, setTask] = useState("");
-  const [items, setItems] = useState([]);
+  const [name, setName] = useState("");
+  const [nameList, setNameList] = useState([]);
   const [windowDimension, setWindowDimension] = useState(null);
+
+  const addAttendee = async(e) =>{
+    e.preventDefault(); 
+
+    try{
+      const docRef = await addDoc(collection(db, "Names"), {
+        nameList: nameList,
+      });
+      console.log("Added document: " + docRef.id)
+    } catch(e){
+      console.log("Trouble writing name: ", e)
+;    }
+  }
+
+  const fetchName = async() =>{
+    await getDocs(collection(db, "Name"))
+      .then((querySnapshot)=>{
+        const newData = querySnapshot.docs.map((doc) => 
+          ({
+            ...doc.data(), 
+            id: doc.id
+          }));
+          setName(newData);
+      })
+  }
+
+  useEffect(()=>{
+    fetchName();
+  }, [])
 
   useEffect(()=>{
     setWindowDimension(window.innerWidth);
@@ -23,23 +54,23 @@ function RSVP() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isDisabled = true;
+  const isDisabled = nameList.length == 0;
   const isMobile = windowDimension <= 960;
 
   function handleChange(event) {
     const newValue = event.target.value;
-    setTask(newValue);
+    setName(newValue);
   }
 
   function addName() {
-    setItems(prevValue => {
-      return [...prevValue, task];
+    setNameList(prevValue => {
+      return [...prevValue, name];
     });
-    setTask("");
+    setName("");
   }
 
   function deleteName(id) {
-    setItems(prevValue => {
+    setNameList(prevValue => {
       return prevValue.filter((item, index) => {
         return index !== id;
       });
@@ -68,7 +99,7 @@ function RSVP() {
             placeholder='First and last name'
             type="text"
             onChange={handleChange}
-            value={task}
+            value={name}
             className={isMobile ? 'mobile-name-input' : 'name-input'}
           ></input>
           <button onClick={addName}
@@ -80,16 +111,24 @@ function RSVP() {
           </button>
         </div>
         <div>
-          <ul className={isMobile ? 'mobile-list-container' 
-            : 'list-container'}>
-            {items.map((item, index) => (
+          <ul className={
+            isDisabled ? 'isDisabled' 
+            : isMobile && !isDisabled 
+            ? 'mobile-list-container' 
+            : 'list-container'  
+            }>
+            {nameList.map((item, index, value) => (
               <NewItem
                 key={index}
                 id={index}
                 text={item}
-                onChecked={deleteName} />))}
+                value={value}
+                name={index}
+                onChecked={deleteName}
+              />))}
           </ul>
           <button className="submit-name-button" 
+            onClick={addAttendee}
             disabled={isDisabled ? "disabled" : ""}>
               Submit
           </button>

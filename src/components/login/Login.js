@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, signInWithGoogle } from '../../Firebase';
+import { auth, logInWithEmailAndPassword } from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import '../login/login-styles.css'
 
@@ -14,14 +14,17 @@ const Login = () => {
         if(loading){
             return;
         }
-        if (user) navigate("/dashboard");
+        //if (user) navigate("/RSVP");
     }, [user, loading]);
 
     return (
         <div className="login-container">
             <div className='login-form'>
                 <div className='form-container'>
-                    <h1 className='login-text'>Sign In To See Data, if you don't have an account then you can't. :P</h1>
+                    {
+                        user ? <h1 className='login-text'> You are logged in already</h1> 
+                        : <h1 className='login-text'>Sign In to see data, if you don't have an account then you can't. :P</h1>
+                    }
                     <label className='user-text'>Email</label>
                     <br></br>
                     <input
@@ -43,7 +46,7 @@ const Login = () => {
                     <button type="submit" 
                         value="Sign In" 
                         className="login-btn"
-                        onClick={signInWithGoogle}>
+                        onClick={() => logInWithEmailAndPassword(email, password)}>
                             Sign In
                     </button>
                 </div>
