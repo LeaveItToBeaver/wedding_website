@@ -113,9 +113,9 @@ function RSVP() {
         <div>
           <ul className={
             isDisabled ? 'isDisabled' 
-            : isMobile && !isDisabled 
-            ? 'mobile-list-container' 
-            : 'list-container'  
+              : isMobile && !isDisabled 
+                ? 'mobile-list-container' 
+                  : 'list-container'  // Sorry for this :/
             }>
             {nameList.map((item, index, value) => (
               <NewItem
