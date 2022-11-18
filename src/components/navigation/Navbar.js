@@ -36,7 +36,7 @@ export default function Navbar() {
                             <h1>
                                 April 1<sup>st</sup>
                                 <br/>
-                                2022
+                                2023
                             </h1>
                         </div>
                         <div className='middle-bar'></div>
