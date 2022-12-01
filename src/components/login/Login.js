@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword } from '../../Firebase';
+import { auth, logInWithEmailAndPassword, logout} from '../../Firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import '../login/login-styles.css'
 
@@ -43,12 +43,23 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         />
                     <br></br>
-                    <button type="submit" 
-                        value="Sign In" 
-                        className="login-btn"
-                        onClick={() => logInWithEmailAndPassword(email, password)}>
-                            Sign In
-                    </button>
+                    {
+                        user ?
+                        <button type="submit" 
+                            value="Sign In" 
+                            className="login-btn"
+                            onClick={() => logout()}>
+                            Log Out
+                        </button> 
+                        : 
+                        <button type="submit" 
+                            value="Sign In" 
+                            className="login-btn"
+                            onClick={() => logInWithEmailAndPassword(email, password)}>
+                            Sign in
+                        </button>
+                            
+                    }
                 </div>
             </div>
         </div>

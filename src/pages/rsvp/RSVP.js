@@ -10,21 +10,37 @@ import NewItem from '../../components/rsvp_list/Item'
 function RSVP() {
   const [name, setName] = useState("");
   const [nameList, setNameList] = useState([]);
+  const [attending, setAttending] = useState([]);
+  const [notAttending, setNotAttending] = useState([]);
   const [windowDimension, setWindowDimension] = useState(null);
 
   const addAttendee = async(e) =>{
-    e.preventDefault(); 
-
-    try{
-      const docRef = await addDoc(collection(db, "Names"), {
-        nameList: nameList,
+    e.preventDefault();
+    try{      
+      const attendingDocRef = await addDoc(collection(db, "Attending"), {
+        attending: filterData(attending)
       });
-      console.log("Added document: " + docRef.id)
-    } catch(e){
-      console.log("Trouble writing name: ", e)
-;    }
+      const notAttendingDocRef = await addDoc(collection(db, "Not_Attending"), {
+        attending: filterData(notAttending)
+      });
+
+      console.log("Added attending: " + attendingDocRef.id)
+      console.log("Added not attending: " + notAttendingDocRef.id)
+    } catch(exception){
+      console.log("Trouble writing name: ", exception);    
+    } finally {
+      setNameList(data =>{
+        return [];
+      });
+    }
   }
 
+  function filterData(array) {
+    return array.filter((item, index) => 
+      array.indexOf(item) === index);
+  }
+
+  //This is here to grab the name from Firebase through the document ID.
   const fetchName = async() =>{
     await getDocs(collection(db, "Name"))
       .then((querySnapshot)=>{
@@ -41,6 +57,7 @@ function RSVP() {
     fetchName();
   }, [])
 
+  // This is here to resize the window to fit mobile devices dynamically.
   useEffect(()=>{
     setWindowDimension(window.innerWidth);
   }, []);
@@ -54,7 +71,7 @@ function RSVP() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isDisabled = nameList.length == 0;
+  const isDisabled = nameList.length === 0;
   const isMobile = windowDimension <= 960;
 
   function handleChange(event) {
@@ -62,10 +79,26 @@ function RSVP() {
     setName(newValue);
   }
 
+  function handleSelectionChange(id, value){
+    let attendee = nameList[id];
+    if(value === "Yes"){
+      setAttending(prevValue => {
+        return [...prevValue, attendee];
+      });
+    } else if (value === "No"){
+      setNotAttending(prevValue => {
+        return [...prevValue, attendee]
+      });
+    }
+    console.log("Attending: " + attending);
+    console.log("Not Attending: " + notAttending);
+  }
+
   function addName() {
     setNameList(prevValue => {
       return [...prevValue, name];
     });
+    console.log(nameList)
     setName("");
   }
 
@@ -117,17 +150,19 @@ function RSVP() {
                 ? 'mobile-list-container' 
                   : 'list-container'  // Sorry for this :/
             }>
-            {nameList.map((item, index, value) => (
+            {nameList.map((item, index) => (
               <NewItem
                 key={index}
                 id={index}
                 text={item}
-                value={value}
                 name={index}
+                onSelectionChange={handleSelectionChange}
                 onChecked={deleteName}
-              />))}
+              />))
+              }
           </ul>
-          <button className="submit-name-button" 
+          <button 
+            className="submit-name-button" 
             onClick={addAttendee}
             disabled={isDisabled ? "disabled" : ""}>
               Submit
