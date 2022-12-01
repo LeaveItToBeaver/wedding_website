@@ -6,7 +6,7 @@ import Map from '../../components/map/Map'
 export default function FAQ() {
   const [showLogin, setShowLogin] = useState(false);
   const onClick = () => {
-    showLogin == true 
+    showLogin === true 
     ? setShowLogin(false) 
     : setShowLogin(true);
   }

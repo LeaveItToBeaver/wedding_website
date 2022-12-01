@@ -1,11 +1,14 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
-import {db} from '../../Firebase'
+import { db, auth } from '../../Firebase'
 import { collection, addDoc, getDocs } from "firebase/firestore"
+import { useAuthState } from 'react-firebase-hooks/auth';
 import '../rsvp/RSVP.css'
 import '../rsvp/RSVPMobile.css'
 import PlusIcon from '../../assets/interactionPNGs/plus-icon.png'
 import NewItem from '../../components/rsvp_list/Item'
+import ListOfAttendants from '../../components/rsvp_list/ListOfAttendants';
+
 
 function RSVP() {
   const [name, setName] = useState("");
@@ -13,10 +16,18 @@ function RSVP() {
   const [attending, setAttending] = useState([]);
   const [notAttending, setNotAttending] = useState([]);
   const [windowDimension, setWindowDimension] = useState(null);
+  const [user, loading, error] = useAuthState(auth);
 
-  const addAttendee = async(e) =>{
+  useEffect(() => {
+    if (loading) {
+      return;
+    }
+    //if (user) navigate("/RSVP");
+  }, [user, loading]);
+
+  const addAttendee = async (e) => {
     e.preventDefault();
-    try{      
+    try {
       const attendingDocRef = await addDoc(collection(db, "Attending"), {
         attending: filterData(attending)
       });
@@ -26,44 +37,45 @@ function RSVP() {
 
       console.log("Added attending: " + attendingDocRef.id)
       console.log("Added not attending: " + notAttendingDocRef.id)
-    } catch(exception){
-      console.log("Trouble writing name: ", exception);    
+    } catch (exception) {
+      console.log("Trouble writing name: ", exception);
     } finally {
-      setNameList(data =>{
+      setNameList(data => {
         return [];
       });
     }
   }
 
   function filterData(array) {
-    return array.filter((item, index) => 
+    return array.filter((item, index) =>
       array.indexOf(item) === index);
   }
 
   //This is here to grab the name from Firebase through the document ID.
-  const fetchName = async() =>{
-    await getDocs(collection(db, "Name"))
-      .then((querySnapshot)=>{
-        const newData = querySnapshot.docs.map((doc) => 
-          ({
-            ...doc.data(), 
-            id: doc.id
-          }));
-          setName(newData);
+  const fetchNames = async () => {
+    await getDocs(collection(db, "Attending"))
+      .then((querySnapshot) => {
+        const newData = querySnapshot.docs.map((doc) =>
+        ({
+          ...doc.data(),
+          id: doc.id
+        }));
+        setName(newData.);
+        console.log(name);
       })
   }
 
-  useEffect(()=>{
-    fetchName();
+  useEffect(() => {
+    fetchNames();
   }, [])
 
   // This is here to resize the window to fit mobile devices dynamically.
-  useEffect(()=>{
+  useEffect(() => {
     setWindowDimension(window.innerWidth);
   }, []);
 
   useEffect(() => {
-    function handleResize(){
+    function handleResize() {
       setWindowDimension(window.innerWidth);
     }
 
@@ -79,13 +91,17 @@ function RSVP() {
     setName(newValue);
   }
 
-  function handleSelectionChange(id, value){
+  /*
+  This function is here to serperate the data
+  into the proper arrays.
+  */
+  function handleSelectionChange(id, value) {
     let attendee = nameList[id];
-    if(value === "Yes"){
+    if (value === "Yes") {
       setAttending(prevValue => {
         return [...prevValue, attendee];
       });
-    } else if (value === "No"){
+    } else if (value === "No") {
       setNotAttending(prevValue => {
         return [...prevValue, attendee]
       });
@@ -133,23 +149,23 @@ function RSVP() {
             type="text"
             onChange={handleChange}
             value={name}
-            className={isMobile ? 'mobile-name-input' : 'name-input'}
-          ></input>
+            className={isMobile ? 'mobile-name-input' : 'name-input'}>
+          </input>
           <button onClick={addName}
             className={isMobile ? 'mobile-name-button' : 'add-name-btn'}>
             <span><img
               src={PlusIcon}
-              className={isMobile ? 'mobile-name-icon' : 'add-name-icon'}/>
+              className={isMobile ? 'mobile-name-icon' : 'add-name-icon'} />
             </span>
           </button>
         </div>
         <div>
           <ul className={
-            isDisabled ? 'isDisabled' 
-              : isMobile && !isDisabled 
-                ? 'mobile-list-container' 
-                  : 'list-container'  // Sorry for this :/
-            }>
+            isDisabled ? 'isDisabled'
+              : isMobile && !isDisabled
+                ? 'mobile-list-container'
+                : 'list-container'  // Sorry for this :/
+          }>
             {nameList.map((item, index) => (
               <NewItem
                 key={index}
@@ -159,14 +175,20 @@ function RSVP() {
                 onSelectionChange={handleSelectionChange}
                 onChecked={deleteName}
               />))
-              }
+            }
           </ul>
-          <button 
-            className="submit-name-button" 
+          <button
+            className="submit-name-button"
             onClick={addAttendee}
             disabled={isDisabled ? "disabled" : ""}>
-              Submit
+            Submit
           </button>
+          {user ?           
+          <button
+            className="submit-name-button"
+            onClick={fetchNames}>
+            Show Data
+          </button> : null}
         </div>
       </div>
     </div>
