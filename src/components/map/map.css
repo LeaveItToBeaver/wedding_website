@@ -1,0 +1,8 @@
+.map{
+    min-width: 250px;
+}
+
+.mobile-map{
+    width: auto;
+    min-width: auto;
+}

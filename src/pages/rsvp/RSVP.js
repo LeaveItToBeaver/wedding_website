@@ -7,8 +7,6 @@ import '../rsvp/RSVP.css'
 import '../rsvp/RSVPMobile.css'
 import PlusIcon from '../../assets/interactionPNGs/plus-icon.png'
 import NewItem from '../../components/rsvp_list/Item'
-import ListOfAttendants from '../../components/rsvp_list/ListOfAttendants';
-
 
 function RSVP() {
   const [name, setName] = useState("");
@@ -28,19 +26,21 @@ function RSVP() {
   const addAttendee = async (e) => {
     e.preventDefault();
     try {
-      const attendingDocRef = await addDoc(collection(db, "Attending"), {
-        attending: filterData(attending)
+      const attendingDocRef = await addDoc(collection(db, "Names"), {
+        attending: filterData(attending),
+        notAttending: filterData(notAttending)
       });
-      const notAttendingDocRef = await addDoc(collection(db, "Not_Attending"), {
-        attending: filterData(notAttending)
-      });
-
-      console.log("Added attending: " + attendingDocRef.id)
-      console.log("Added not attending: " + notAttendingDocRef.id)
+      console.log("Added data: " + attendingDocRef.id)
     } catch (exception) {
       console.log("Trouble writing name: ", exception);
     } finally {
       setNameList(data => {
+        return [];
+      });
+      setAttending(data => {
+        return [];
+      });
+      setNotAttending(data => {
         return [];
       });
     }
@@ -53,21 +53,26 @@ function RSVP() {
 
   //This is here to grab the name from Firebase through the document ID.
   const fetchNames = async () => {
-    await getDocs(collection(db, "Attending"))
+    const getDatabaseInfo = await getDocs(collection(db, "Names"));
+
+    getDatabaseInfo.forEach((doc) => {
+      console.log(doc.data());
+    });
+    await getDocs(collection(db, "Names/*/attending"))
       .then((querySnapshot) => {
         const newData = querySnapshot.docs.map((doc) =>
         ({
           ...doc.data(),
-          id: doc.id
+          id: doc.id,
         }));
-        setName(newData.);
-        console.log(name);
-      })
+        setNameList(newData);
+        console.log(nameList);
+      }); 
   }
 
-  useEffect(() => {
-    fetchNames();
-  }, [])
+  //useEffect(() => {
+  //  fetchNames();
+  //}, [])
 
   // This is here to resize the window to fit mobile devices dynamically.
   useEffect(() => {
@@ -94,6 +99,10 @@ function RSVP() {
   /*
   This function is here to serperate the data
   into the proper arrays.
+
+  Still have an issue where if the person selects the wrong thing and 
+  then the right thing, it clones it into both arrays, an easy fix 
+  but an annoying one. -_-
   */
   function handleSelectionChange(id, value) {
     let attendee = nameList[id];
@@ -131,10 +140,9 @@ function RSVP() {
       <h1 className='rsvp-heading-one'>We Are Excited To Have You!</h1>
       <h2 className='rsvp-heading-two'>
         If you have any questions about a plus one <br />
-        feel free to email either one of us <br />
-        jasonbeaverw99@gmail.com<br />
-        or give us a call at <br />
-        336-909-8493.
+        feel free to email me at <br />
+        jasonbeaverw99@gmail.com <br />
+        or give us a call at 336-909-8493.
       </h2>
       <div className='item-container'>
         <div className='item-heading'>
@@ -190,6 +198,7 @@ function RSVP() {
             Show Data
           </button> : null}
         </div>
+        <div className='list-attendants'></div>
       </div>
     </div>
   )
