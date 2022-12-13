@@ -70,10 +70,6 @@ function RSVP() {
       }); 
   }
 
-  //useEffect(() => {
-  //  fetchNames();
-  //}, [])
-
   // This is here to resize the window to fit mobile devices dynamically.
   useEffect(() => {
     setWindowDimension(window.innerWidth);
@@ -96,25 +92,28 @@ function RSVP() {
     setName(newValue);
   }
 
-  /*
-  This function is here to serperate the data
-  into the proper arrays.
-
-  Still have an issue where if the person selects the wrong thing and 
-  then the right thing, it clones it into both arrays, an easy fix 
-  but an annoying one. -_-
-  */
   function handleSelectionChange(id, value) {
     let attendee = nameList[id];
-    if (value === "Yes") {
-      setAttending(prevValue => {
-        return [...prevValue, attendee];
+
+    if (value === "Yes"){
+      setNotAttending(value => {
+        return value.filter(name => name !== attendee);
       });
-    } else if (value === "No") {
-      setNotAttending(prevValue => {
-        return [...prevValue, attendee]
+      
+      setAttending(preValue => {
+        return [...preValue, attendee];
       });
     }
+
+    if (value === "No"){
+      setAttending(value => {
+        return value.filter(name => name !== attendee);
+      });
+      setNotAttending(preValue => {
+        return [...preValue, attendee];
+      });
+    }
+
     console.log("Attending: " + attending);
     console.log("Not Attending: " + notAttending);
   }
