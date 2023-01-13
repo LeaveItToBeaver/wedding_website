@@ -7,7 +7,7 @@ export default function RSVP_Btn() {
     <div className='submit-button-container'>
       <Link to="/RSVP">
         <button className='submit-button'>
-            RSVP HERE BRFORE MARCH 2023
+            RSVP HERE BEFORE MARCH 2023
         </button>
       </Link>
     </div>

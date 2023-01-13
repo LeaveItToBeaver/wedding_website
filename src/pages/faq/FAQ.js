@@ -17,12 +17,23 @@ export default function FAQ() {
         <h1>
           We are so excited to see you there!
         </h1>
+        <br/>
+        <h1>What should we wear?</h1>
+        <h2>Anything smart casual or semi-formal</h2>
+        <br/><br/>
+        <h1>What are we going to eat?</h1>
+        <h2>Buffet Consisting Of:</h2>
+        <ul className='FAQ-list'>
+          <li className='FAQ-list'>Honey ginger pork roast</li>
+          <li className='FAQ-list'>Herb Based chicken</li>
+          <li className='FAQ-list'>Brussel sprouts</li>
+          <li className='FAQ-list'>Mashed potatoes</li>
+          <li className='FAQ-list'>Rolls</li>
+          <li className='FAQ-list'>Simple salad</li>
+        </ul>
         <br/><br/>
         <h2>Where do we need to go?</h2>
         <h3>The address is 324 Sidden St, Mt Airy, NC 27030</h3>
-        <br/>
-        <h2>What should we wear?</h2>
-        <h3>Anything smart casual or semi-formal, </h3>
         <Map/>
 
       </div>
