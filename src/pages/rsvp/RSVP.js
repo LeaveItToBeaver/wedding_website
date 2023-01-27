@@ -119,11 +119,11 @@ function RSVP() {
   }
 
   function addName() {
-    setNameList(prevValue => {
-      return [...prevValue, name];
-    });
-    console.log(nameList)
-    setName("");
+      setNameList(prevValue => {
+        return [...prevValue, name];
+      });
+      console.log(nameList)
+      setName("");
   }
 
   function deleteName(id) {
