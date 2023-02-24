@@ -26,6 +26,7 @@ function RSVP() {
   const addAttendee = async (e) => {
     e.preventDefault();
     try {
+      //Filters data by selection
       const attendingDocRef = await addDoc(collection(db, "Names"), {
         attending: filterData(attending),
         notAttending: filterData(notAttending)
@@ -45,7 +46,7 @@ function RSVP() {
       });
     }
   }
-
+  //This is the function called above, it clears duplicates within the Array.
   function filterData(array) {
     return array.filter((item, index) =>
       array.indexOf(item) === index);
@@ -70,7 +71,7 @@ function RSVP() {
       }); 
   }
 
-  // This is here to resize the window to fit mobile devices dynamically.
+  // START This is here to resize the window to fit mobile devices dynamically.
   useEffect(() => {
     setWindowDimension(window.innerWidth);
   }, []);
@@ -86,7 +87,12 @@ function RSVP() {
 
   const isDisabled = nameList.length === 0;
   const isMobile = windowDimension <= 960;
-
+// END
+/* START This section handles selection changes and 
+    sorts the names into the appropriate array. 
+    It duplicates the names anytime someone makes multiple 
+    selections within the same name, that is why the filtering is 
+    necessary above*/
   function handleChange(event) {
     const newValue = event.target.value;
     setName(newValue);
@@ -133,7 +139,8 @@ function RSVP() {
       });
     });
   }
-
+//END
+  
   return (
     <div className='rsvp-contianer'>
       <h1 className='rsvp-heading-one'>We Are Excited To Have You!</h1>
